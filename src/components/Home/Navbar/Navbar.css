@@ -1,0 +1,18 @@
+.nav-item{
+    font-size: 18px;
+    margin-right: 10px;
+    font-family: 'Poppins', sans-serif;
+    
+}
+.main-button{
+    background: #152143;
+    color: white;
+    border-radius: 6px;
+    padding: 6px 20px;
+}
+.font-color{
+    color: #152143 !important;
+    font-size: 34px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}

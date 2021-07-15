@@ -1,0 +1,14 @@
+.simple-card{
+    display: flex;
+    background: white;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px #cec5e8;
+   
+}
+.text-color{
+    color: #152143;
+}
