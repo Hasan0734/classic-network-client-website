@@ -7,7 +7,7 @@ const ServiceTableData = ({service}) => {
     
     const handleServiceDelete = (id) => {
         console.log(id)
-        fetch(`http://localhost:5500/delete-service/${_id}`, {
+        fetch(`https://evening-lowlands-38698.herokuapp.com/delete-service/${_id}`, {
             method: 'DELETE', 
         })
         .then((res) => res.json())

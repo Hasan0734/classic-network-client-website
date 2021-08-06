@@ -6,7 +6,7 @@ const OrderTableData = ({order, handleData}) => {
     const handleSelect=(e)=>{
         const update = e.target.value;
         console.log(update)
-        fetch(`http://localhost:5500/order-lists/?id=${_id}&status=${update}`,{
+        fetch(`https://evening-lowlands-38698.herokuapp.com/order-lists/?id=${_id}&status=${update}`,{
             method: 'PUT'
         })
         .then(res => res.json())

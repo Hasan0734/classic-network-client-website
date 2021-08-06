@@ -11,6 +11,7 @@ import MakeAdmin from "./components/Dashboard/MakeAdmin/MakeAdmin";
 import AddService from "./components/Dashboard/AddService/AddService";
 import ManageService from "./components/Dashboard/ManageService/ManageService";
 
+
 export const UserContext = createContext({});
 
 function App() {
@@ -35,7 +36,7 @@ function App() {
           <PrivateRoute path="/dashboard">
             <Dashboard />
           </PrivateRoute>
-          
+
           { isAdmin === null &&
             <div>
               <PrivateRoute path="/booking/:id">
@@ -52,8 +53,6 @@ function App() {
           </PrivateRoute>
             </div>
           }
-        
-      
           {isAdmin && <div>
             <PrivateRoute path="/admin/order-lists">
             <OrderLists />
@@ -68,9 +67,7 @@ function App() {
             <ManageService/>
           </PrivateRoute>
             </div>}
-            
-       
-       
+           
         </Switch>
       </Router>
     </UserContext.Provider>

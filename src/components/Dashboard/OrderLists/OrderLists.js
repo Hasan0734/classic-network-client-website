@@ -12,7 +12,7 @@ const OrderLists = () => {
         handleData()
     }, [])
     const handleData = () => {
-        fetch('http://localhost:5500/order-lists')
+        fetch('https://evening-lowlands-38698.herokuapp.com/order-lists')
         .then(res => res.json())
         .then(data => {
             setOrders(data)

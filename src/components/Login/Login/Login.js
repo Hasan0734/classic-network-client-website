@@ -55,7 +55,7 @@ const Login = () => {
       });
   };
   useEffect(() => {
-    fetch('http://localhost:5500/isAdmin', {
+    fetch('https://evening-lowlands-38698.herokuapp.com/isAdmin', {
         method: 'POST',
         headers: {'content-type' : 'application/json'},
         body: JSON.stringify({email: loggedInUser.email})

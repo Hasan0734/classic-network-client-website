@@ -18,7 +18,7 @@ const Review = () => {
    
    newData.email = loggedInUser.email
    newData.img= loggedInUser.img
-    fetch('http://localhost:5500/addReview', {
+    fetch('https://evening-lowlands-38698.herokuapp.com/addReview', {
       method: 'POST',
       headers: {'content-type': 'application/json'},
       body: JSON.stringify(newData)

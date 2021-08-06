@@ -14,7 +14,7 @@ const Testimonials = () => {
     const [loading, setLoading] = useState(true);
     const [color, setColor] = useState("rgb(54, 215, 183)");
     useEffect(() => {
-        fetch('http://localhost:5500/review')
+        fetch('https://evening-lowlands-38698.herokuapp.com/review')
         .then(res => res.json())
         .then(data => {
             setTestimonials(data)
@@ -31,7 +31,7 @@ const Testimonials = () => {
                     }
                     {testimonials.length === 0 &&  <div className="sweet-loading text-center">
                      <BeatLoader color={color} loading={loading} css={override} size={15} />
-                     </div>}}
+                     </div>}
                 </div>
             </div>
         </section>

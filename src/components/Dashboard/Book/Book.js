@@ -14,7 +14,7 @@ const Book = () => {
 
   const { id } = useParams();
   useEffect(() => {
-    fetch(`http://localhost:5500/service/${id}`)
+    fetch(`https://evening-lowlands-38698.herokuapp.com/service/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setService(data);
@@ -40,7 +40,7 @@ const Book = () => {
       bookingStatus: 'Pending',
       bookingTime: new Date(),
     };
-    fetch("http://localhost:5500/addBook", {
+    fetch("https://evening-lowlands-38698.herokuapp.com/addBook", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(bookingDetail),

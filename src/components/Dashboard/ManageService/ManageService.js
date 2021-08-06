@@ -16,7 +16,7 @@ const ManageService = () => {
     const [loading, setLoading] = useState(true);
     const [color, setColor] = useState("rgb(54, 215, 183)");
     useEffect(() => {
-        fetch('http://localhost:5500/services')
+        fetch('https://evening-lowlands-38698.herokuapp.com/services')
         .then(res => res.json())
         .then(data => {
             setServices(data)
