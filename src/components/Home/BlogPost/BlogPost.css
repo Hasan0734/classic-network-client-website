@@ -1,0 +1,14 @@
+.blog-card{
+    border: none;
+    background: orange;
+    
+}
+.author-img{
+    margin-right: 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.author{
+    line-height: 5px;
+}

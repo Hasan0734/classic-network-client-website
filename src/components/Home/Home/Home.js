@@ -1,13 +1,21 @@
 import React from 'react';
+import Blogs from '../Blogs/Blogs';
+import ContactForm from '../ContactForm/ContactForm';
+import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
-import Preferds from '../Preferds/Preferds';
+import Services from '../Services/Services';
+import Testimonials from '../Testimonials/Testimonials';
 
 const Home = () => {
     return (
-        <div>
+        <div className="home-container">
             <Header></Header>
-            <Preferds></Preferds>
-        </div>
+            <Services></Services>
+            <Blogs></Blogs>
+            <Testimonials></Testimonials>
+            <ContactForm></ContactForm>
+            <Footer></Footer>
+        </div>  
     );
 };
 

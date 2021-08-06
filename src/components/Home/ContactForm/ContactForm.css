@@ -1,0 +1,15 @@
+.contact-form{
+    background: #fff4f4;
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+.contact-form textarea{
+    height: 200px;
+    width: 100%;
+    resize: none;
+}
+.form-area{
+    
+    margin: auto;
+    resize: none
+}

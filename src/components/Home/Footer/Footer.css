@@ -1,0 +1,16 @@
+.footer-section{
+   
+    background-color: #152143;
+    padding-top: 80px;
+
+}
+.company-name{
+    border-bottom: 1px solid #8080805c;
+    padding-bottom: 10px;
+    font-weight: bold;
+    color: white;
+}
+.link{
+    color: white;
+    text-decoration: none;
+}
