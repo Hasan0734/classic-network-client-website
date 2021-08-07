@@ -22,25 +22,25 @@ const Sidebar = () => {
       <h1>Repair Service</h1>
       <hr />
       <ul className="nav nav-pills flex-column mb-auto">
-        { isAdmin === null && <div>
-        
+        {isAdmin === null && (
+          <div>
             <li className="nav-item bg-item mt-2">
-          <Link to="/book" className="nav-link link-dark">
-            <FontAwesomeIcon icon={faCartArrowDown} /> Book
-          </Link>
-        </li>
-        <li className="nav-item bg-item mt-2">
-          <Link to="/booking-list" className="nav-link link-dark">
-            <FontAwesomeIcon icon={faClipboardList} /> Booking list
-          </Link>
-        </li>
-        <li className="nav-item bg-item mt-2">
-          <Link to="/review" className="nav-link link-dark">
-            <FontAwesomeIcon icon={faCommentDots} /> Review
-          </Link>
-        </li>
+              <Link to="/book" className="nav-link link-dark">
+                <FontAwesomeIcon icon={faCartArrowDown} /> Book
+              </Link>
+            </li>
+            <li className="nav-item bg-item mt-2">
+              <Link to="/booking-list" className="nav-link link-dark">
+                <FontAwesomeIcon icon={faClipboardList} /> Booking list
+              </Link>
+            </li>
+            <li className="nav-item bg-item mt-2">
+              <Link to="/review" className="nav-link link-dark">
+                <FontAwesomeIcon icon={faCommentDots} /> Review
+              </Link>
+            </li>
           </div>
-        }
+        )}
         {isAdmin && (
           <div>
             <li className="nav-item bg-item mt-2">

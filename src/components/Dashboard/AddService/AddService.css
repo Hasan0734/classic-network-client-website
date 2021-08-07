@@ -1,23 +1,23 @@
-.add-service-area{
-    padding: 26px;
-    border: none;
-    border-radius: 20px;
+.add-service-area {
+  padding: 26px;
+  border: none;
+  border-radius: 20px;
 }
-.service-description textarea{
-    resize: none;
-    height: 120px;
-    width: 440px
+.service-description textarea {
+  resize: none;
+  height: 120px;
+  width: 440px;
 }
-.user-area{
-    margin-right: 3rem;
+.user-area {
+  margin-right: 3rem;
 }
-.user-area img{
-    margin: 6px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: orange;
+.user-area img {
+  margin: 6px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: orange;
 }
-.user-name{
-    margin-bottom: 0;
+.user-name {
+  margin-bottom: 0;
 }

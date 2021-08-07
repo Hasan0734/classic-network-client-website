@@ -13,8 +13,7 @@ const Login = () => {
   }
 
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-  
-  
+
   const [error, setError] = useState(false);
   const history = useHistory();
   const location = useLocation();
@@ -27,27 +26,27 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         const newUser = {
-            email: user.email,
-            name: user.displayName,
-            img: user.photoURL
+          email: user.email,
+          name: user.displayName,
+          img: user.photoURL,
         };
-       sessionStorage.setItem('userInfo', JSON.stringify(newUser))
-        setLoggedInUser(newUser)
+        sessionStorage.setItem("userInfo", JSON.stringify(newUser));
+        setLoggedInUser(newUser);
         storeAuthToken();
       })
       .catch((error) => {
         const errorMessage = error.message;
-        setLoggedInUser({error: errorMessage});
+        setLoggedInUser({ error: errorMessage });
         setError(true);
       });
   };
   const storeAuthToken = () => {
     firebase
       .auth()
-      .currentUser.getIdToken( true)
+      .currentUser.getIdToken(true)
       .then((idToken) => {
         sessionStorage.setItem("token", idToken);
-        
+
         history.replace(from);
       })
       .catch((error) => {
@@ -55,18 +54,17 @@ const Login = () => {
       });
   };
   useEffect(() => {
-    fetch('https://evening-lowlands-38698.herokuapp.com/isAdmin', {
-        method: 'POST',
-        headers: {'content-type' : 'application/json'},
-        body: JSON.stringify({email: loggedInUser.email})
+    fetch("https://evening-lowlands-38698.herokuapp.com/isAdmin", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ email: loggedInUser.email }),
     })
-    .then(res => res.json())
-    .then(data => {
-            sessionStorage.setItem("admin", JSON.stringify(data[0].email))
-    })
-    .catch(err => console.log(err))
-   
-},[loggedInUser.email])
+      .then((res) => res.json())
+      .then((data) => {
+        sessionStorage.setItem("admin", JSON.stringify(data[0].email));
+      })
+      .catch((err) => console.log(err));
+  }, [loggedInUser.email]);
   return (
     <div className="login-container">
       <div>
@@ -82,7 +80,7 @@ const Login = () => {
             <img src={googleIcon} alt="" />
             <span>Continue with Google</span>
           </button>
-        {error &&   <p className="text-danger mt-5">{loggedInUser.error}</p>}
+          {error && <p className="text-danger mt-5">{loggedInUser.error}</p>}
         </div>
       </div>
     </div>

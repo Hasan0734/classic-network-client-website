@@ -1,18 +1,18 @@
-.testi-img{
-    display: flex;
-    align-self: center;
-    height: 85px;
-    width: 84px;
-    border-radius: 50%;
+.testi-img {
+  display: flex;
+  align-self: center;
+  height: 85px;
+  width: 84px;
+  border-radius: 50%;
 }
-.testimonial-card{
-    padding:  25px;
-    border: none;
-    background: #050221;
-    border-radius: 10px;
-    transition: 1s all;
+.testimonial-card {
+  padding: 25px;
+  border: none;
+  background: #050221;
+  border-radius: 10px;
+  transition: 1s all;
 }
-.testimonial-card:hover{
-    transform: scale(0.9);
-    box-shadow: 0px 0px 23px 0px #6550b7;
+.testimonial-card:hover {
+  transform: scale(0.9);
+  box-shadow: 0px 0px 23px 0px #6550b7;
 }

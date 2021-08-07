@@ -52,7 +52,8 @@ const Stripe = ({
         <label>
           CVC
           <CardCvcElement />
-        </label>
+        </label> 
+        <p>Service Charge: ${price}</p>
         <button className="pay-button" type="submit" disabled={!stripe}>
           Pay
         </button>

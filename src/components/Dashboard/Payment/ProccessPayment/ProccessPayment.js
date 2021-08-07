@@ -15,7 +15,7 @@ const ProccessPayment = ({
 
   return (
     <>
-      <div style={{ width: "540px" }} className="method col-md-6">
+      <div className="method col-md-4 col-sm-12">
         <div>
           <span className="text-secondary">Pay with</span>
           <div className="d-flex justify-content-evenly">

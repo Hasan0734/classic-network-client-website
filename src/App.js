@@ -11,14 +11,15 @@ import MakeAdmin from "./components/Dashboard/MakeAdmin/MakeAdmin";
 import AddService from "./components/Dashboard/AddService/AddService";
 import ManageService from "./components/Dashboard/ManageService/ManageService";
 
-
 export const UserContext = createContext({});
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(
     JSON.parse(sessionStorage.getItem("userInfo")) || {}
   );
-  const [isAdmin, setIsAdmin] = useState( JSON.parse(sessionStorage.getItem('admin')))
+  const [isAdmin, setIsAdmin] = useState(
+    JSON.parse(sessionStorage.getItem("admin"))
+  );
 
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
@@ -32,42 +33,43 @@ function App() {
           </Route>
           <Route path="/login">
             <Login />
-          </Route>    
+          </Route>
           <PrivateRoute path="/dashboard">
             <Dashboard />
           </PrivateRoute>
 
-          { isAdmin === null &&
+          {isAdmin === null && (
             <div>
               <PrivateRoute path="/booking/:id">
-            <Book />
-          </PrivateRoute>
-          <PrivateRoute path="/book">
-            <Book />
-          </PrivateRoute>
-          <PrivateRoute path="/review">
-            <Review />
-          </PrivateRoute>
-          <PrivateRoute path="/booking-list">
-            <Dashboard />
-          </PrivateRoute>
+                <Book />
+              </PrivateRoute>
+              <PrivateRoute path="/book">
+                <Book />
+              </PrivateRoute>
+              <PrivateRoute path="/review">
+                <Review />
+              </PrivateRoute>
+              <PrivateRoute path="/booking-list">
+                <Dashboard />
+              </PrivateRoute>
             </div>
-          }
-          {isAdmin && <div>
-            <PrivateRoute path="/admin/order-lists">
-            <OrderLists />
-          </PrivateRoute>
-          <PrivateRoute path="/admin/make-admin">
-            <MakeAdmin />
-          </PrivateRoute>
-          <PrivateRoute path="/admin/add-service">
-            <AddService />
-          </PrivateRoute>
-          <PrivateRoute path="/admin/manage-service">
-            <ManageService/>
-          </PrivateRoute>
-            </div>}
-           
+          )}
+          {isAdmin && (
+            <div>
+              <PrivateRoute path="/admin/order-lists">
+                <OrderLists />
+              </PrivateRoute>
+              <PrivateRoute path="/admin/make-admin">
+                <MakeAdmin />
+              </PrivateRoute>
+              <PrivateRoute path="/admin/add-service">
+                <AddService />
+              </PrivateRoute>
+              <PrivateRoute path="/admin/manage-service">
+                <ManageService />
+              </PrivateRoute>
+            </div>
+          )}
         </Switch>
       </Router>
     </UserContext.Provider>

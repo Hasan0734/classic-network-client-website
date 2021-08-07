@@ -6,7 +6,7 @@ import "./Review.css";
 const Review = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const [notify, setNotify] = useState(null);
-  const [error, setError] = useState(null)
+  const [error, setError] = useState(null);
   const {
     register,
     handleSubmit,
@@ -14,28 +14,27 @@ const Review = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-   const newData = {...data}
-   
-   newData.email = loggedInUser.email
-   newData.img= loggedInUser.img
-    fetch('https://evening-lowlands-38698.herokuapp.com/addReview', {
-      method: 'POST',
-      headers: {'content-type': 'application/json'},
-      body: JSON.stringify(newData)
-    })
-    .then(res => {
-      if(res){
-        setNotify(true)
-        setError(null)
-      }
-      reset()
-    })
-    .catch(err => {
-      setError(true)
-      setNotify(null)
-    })
-  };
+    const newData = { ...data };
 
+    newData.email = loggedInUser.email;
+    newData.img = loggedInUser.img;
+    fetch("https://evening-lowlands-38698.herokuapp.com/addReview", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(newData),
+    })
+      .then((res) => {
+        if (res) {
+          setNotify(true);
+          setError(null);
+        }
+        reset();
+      })
+      .catch((err) => {
+        setError(true);
+        setNotify(null);
+      });
+  };
 
   return (
     <div className="container-fluid row dashboard">
@@ -46,8 +45,8 @@ const Review = () => {
         <div className="d-flex align-items-center justify-content-between">
           <h4 style={{ padding: "22px" }}>Review</h4>
           <div className="user-area d-flex align-items-center">
-          <img className="img-fluid" src={loggedInUser.img} alt="" />
-          <h5 className="user-name">{loggedInUser.name}</h5>
+            <img className="img-fluid" src={loggedInUser.img} alt="" />
+            <h5 className="user-name">{loggedInUser.name}</h5>
           </div>
         </div>
         <div className="container-area">
@@ -88,10 +87,15 @@ const Review = () => {
             <div className="text-center pt-4">
               <input type="submit" className="btn main-button px-5" />
             </div>
-            {notify && <p className="text-success mt-2 text-center">Review Successful</p>}
-            {error && <p className="text-danger mt-2 text-center">Review Unsuccessful</p>}
+            {notify && (
+              <p className="text-success mt-2 text-center">Review Successful</p>
+            )}
+            {error && (
+              <p className="text-danger mt-2 text-center">
+                Review Unsuccessful
+              </p>
+            )}
           </form>
-         
         </div>
       </div>
     </div>
